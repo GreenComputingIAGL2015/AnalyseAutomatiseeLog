@@ -54,9 +54,13 @@ public class ExtraireConsommationPowerapi {
 				if ((msCourant - d) >= 1000) {
 					sTotal = sTotal +1;
 					
-					temp = mW/nb*Math.pow(10,-3);
-					System.out.println(sTotal  + ";" +temp);
-					consommationTotale = consommationTotale + temp;
+					if (nb == 0) {
+						System.out.println(sTotal + ";0");
+					} else {
+						temp = mW/nb*Math.pow(10,-3);
+						System.out.println(sTotal  + ";" +temp);
+						consommationTotale = consommationTotale + temp;
+					}
 					
 					mW = 0;
 					nb = 0;
